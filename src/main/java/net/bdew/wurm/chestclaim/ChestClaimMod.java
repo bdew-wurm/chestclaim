@@ -31,6 +31,11 @@ public class ChestClaimMod implements WurmMod, ServerStartedListener, Configurab
     }
 
     @Override
+    public void preInit() {
+        ModActions.init();
+    }
+
+    @Override
     public void configure(Properties properties) {
         claimTimer = (int) (Float.parseFloat(properties.getProperty("claimActionTime")) * 10);
         karmaReward = Integer.parseInt(properties.getProperty("karmaReward"));
